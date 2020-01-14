@@ -1,0 +1,45 @@
+Testing our newborn.
+
+1. Run "yarn dev" or "npm run dev".
+2. Go to http://localhost:5000/graphql
+3. Make some querys and mutations!
+
+
+
+--------------
+
+mutation{
+  createUser(name:"Nikosik",password:"qwerty123"){
+    id
+    name
+  }
+}
+-------------
+query{
+  login(name:"Nikosik",password:"qwerty123"){
+    token
+  }
+}
+
+-------HEADERS
+{
+  "token":""eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMWRmN2M0OWM3N2VlMWYyNzc0OTkzMSIsImlhdCI6MTU3OTAyMjM4NywiZXhwIjoxNTc5MDM0Mzg3fQ.RfrntQqJ4MG_3FEoDYDMPEkTlxDVbG51WvwHxbaSnTU""
+}
+
+------------
+mutation{
+  createPost(title:"First post aaa",content:"Second step: for every n users of this list, GraphQL will need to resolve the address attribute. This means it will go through the address resolve function n-times, most likely triggering n requests to your datastore."){
+    title
+    content
+  }
+}
+
+query{
+  posts{
+    author{
+      name
+    }
+    title
+    content
+  }
+}
